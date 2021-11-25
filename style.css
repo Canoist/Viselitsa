@@ -1,0 +1,19 @@
+.game__board{
+   display: flex;
+   justify-content: space-between;
+}
+.game__board__letter {
+   width: 20px;
+   height: 20px;
+   font-size: 18px;
+   border: solid 1px black;
+   text-align: center;
+}
+.game__lives__item{
+   width: 70px;
+   height: 20px;
+   background-color: rgb(172, 58, 58);
+   border-radius: 5px;
+   box-shadow: 0 2px 5px #000;
+   margin: 5px 0;
+}
