@@ -4,13 +4,22 @@ const gameBoard = document.querySelector('.game__board')
 const gameLives = document.querySelector('.game__lives')
 
 const modalWindow = document.querySelector('.modal__window')
-const ul = document.querySelector('ul')
+const spanAll = document.querySelectorAll('span')
 
 let difficult = null;
-ul.addEventListener('click', (event) => {
-   const { target } = event;
-   difficult = target.getAttribute('id');
-   modalWindow.classList.add('modal__window_hidden')
+spanAll.forEach((element) => {
+   element.addEventListener('click', (event) => {
+      const { target } = event;
+      difficult = target.getAttribute('id');
+      if (difficult === 'easy') {
+         renderLives(7)
+      } else if (difficult === 'normal') {
+         renderLives(5)
+      } else {
+         renderLives(3)
+      }
+      modalWindow.classList.add('modal__window_hidden')
+   })
 })
 
 function getRandomWord(words) {
@@ -33,5 +42,3 @@ function renderLives(lives) {
       gameLives.innerHTML += `<div class="game__lives__item" id = "live_${i + 1}"></div>`
    }
 }
-
-renderLives(4)
