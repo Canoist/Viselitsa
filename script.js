@@ -1,12 +1,16 @@
 const words = ['Чужестранец', 'Жужжалка', 'Прокрастинация', 'Сватовство', 'Парадигма', 'Код', 'Скороход'];
 
 const gameBoard = document.querySelector('.game__board')
-const gameLifes = document.querySelector('.game__lifes')
+const gameLives = document.querySelector('.game__lives')
 
 const modalWindow = document.querySelector('.modal__window')
-modalWindow.addEventListener('click', (event) => {
+const ul = document.querySelector('ul')
+
+let difficult = null;
+ul.addEventListener('click', (event) => {
    const { target } = event;
-   console.log(target);
+   difficult = target.getAttribute('id');
+   modalWindow.classList.add('modal__window_hidden')
 })
 
 function getRandomWord(words) {
@@ -26,7 +30,7 @@ render()
 
 function renderLives(lives) {
    for (let i = 0; i < lives; i++) {
-      gameLifes.innerHTML += `<div class="game__lives__item" id = "live_${i + 1}"></div>`
+      gameLives.innerHTML += `<div class="game__lives__item" id = "live_${i + 1}"></div>`
    }
 }
 
