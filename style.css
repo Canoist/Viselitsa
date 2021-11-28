@@ -64,7 +64,13 @@ body{
    top: 100%;
    opacity: 0;
 }
-.modal__window div{
+.modal__window__message {
+   background:linear-gradient(rgba(23, 74, 150, .8) 7%, rgb(221, 218, 36) 55%,rgba(23, 74, 150, .8) 76%);
+   border-radius: 50%;
+   padding: 30px;
+   text-align: center;
+}
+.modal__window__message div{
    display: flex;
    margin-top: 15px;
    width: 360px;
@@ -73,13 +79,13 @@ body{
 }
 .modal__window span{
    padding: 5px 15px;
-   text-align: center;
    border-radius: 5px;
+   margin-bottom: 33px;
    border: solid 1px black;
    cursor: pointer;
 }
 .modal__window span:hover{
-   background-color: darkorange;
+   background: radial-gradient(gold, rgb(255, 72, 0));
    box-shadow: 0 3px 5px black;
 }
 .modal__window span:active{
