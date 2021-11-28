@@ -110,3 +110,6 @@ body{
    box-shadow: 0 2px 5px #000;
    margin: 5px 0;
 }
+.game__rules ol {
+   padding-left: 30px;
+}

@@ -2,11 +2,10 @@ const words = ['Чужестранец', 'Жужжалка', 'Прокрасти
 
 const gameBoard = document.querySelector('.game__board')
 const gameLives = document.querySelector('.game__lives')
-
 const modalWindow = document.querySelector('.modal__window')
 const spanAll = document.querySelectorAll('span')
-
 let difficult = null;
+
 spanAll.forEach((element) => {
    element.addEventListener('click', (event) => {
       const { target } = event;
@@ -18,6 +17,7 @@ spanAll.forEach((element) => {
       } else {
          renderLives(3)
       }
+      render()
       modalWindow.classList.add('modal__window_hidden')
    })
 })
@@ -34,8 +34,6 @@ function render() {
    }
    gameBoard.style.width = `${20 * word.length + 5 * (word.length - 1)}px`
 }
-render()
-
 
 function renderLives(lives) {
    for (let i = 0; i < lives; i++) {
