@@ -13,6 +13,7 @@
    <div class="modal__window">
       <div class="modal__window__message">
          <p>Выберите сложность:</p>
+         <hr>
          <div>
             <span id="easy">Простой</span>
             <span id="normal">Нормальный</span>
@@ -20,21 +21,30 @@
          </div>
       </div>
    </div>
+   <h2>Виселица</h2>
    <div class="game">
-      <div class="game__board"></div>
-      <input type="text" placeholder="Введите сюда символ:">
+      <div class="game__board">
+         <div class="game__board__word"></div>
+         <form action="submit" autocomplete="off">
+            <label>Введите сюда символ: </label>
+            <input class="input-text" name="letter" type="text">
+            <input id="button" type="submit" value="Enter">
+         </form>
+         <div class="game__board__warning"></div>
+      </div>
       <div class="game__lives">
          Количество жизней:
       </div>
-      <div class="game__rules">
-         <ol type="1">
-            <li>Вводить в поле нужно лишь русские буквы</li>
-            <li>Поле не чувствительно к регистру</li>
-            <li>Задача побуквенно расшифровать что за слово скрыто</li>
-            <li>Одинаковые буквы будут открываться</li>
-            <li>В зависимости от выбранного уровня сложности будет определенное количество жизней</li>
-         </ol>
-      </div>
+   </div>
+   <div class="game__rules">
+      Правила:
+      <ol type="1">
+         <li>Вводить в поле нужно лишь русские буквы</li>
+         <li>Поле не чувствительно к регистру</li>
+         <li>Задача побуквенно расшифровать что за слово скрыто</li>
+         <li>Одинаковые буквы будут открываться</li>
+         <li>В зависимости от выбранного уровня сложности будет определенное количество жизней</li>
+      </ol>
    </div>
    <script src="./script.js"></script>
 </body>

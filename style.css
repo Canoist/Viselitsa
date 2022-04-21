@@ -46,16 +46,17 @@ body{
    right: 0;
    top: 0;
    bottom: 0;
-   width: 100%;
-   height: 100%;
+   width: 100vw;
+   height: 100vh;
+   text-shadow: 0 .1px .5px #000;
    
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    
-   z-index: 1000;
-   transition: 0.2s ease;
+   z-index: 5;
+   transition: .5s ease;
    opacity: 1;
    
    background-color: rgb(23, 74, 150);
@@ -65,24 +66,42 @@ body{
    opacity: 0;
 }
 .modal__window__message {
-   background:linear-gradient(rgba(23, 74, 150, .8) 7%, rgb(221, 218, 36) 55%,rgba(23, 74, 150, .8) 76%);
-   border-radius: 50%;
+   display: inline-block;
+   background: rgb(221, 218, 36);
+   border-radius: 15px;
+   box-shadow: 0 3px 15px black;
    padding: 30px;
    text-align: center;
+   align-items: center;
+}
+hr {
+   margin-top: 15px;
+   height: 2px;
+   background-color: #000;
 }
 .modal__window__message div{
    display: flex;
-   margin-top: 15px;
-   width: 360px;
    justify-content: space-between;
-   align-items: center;
+   border-radius: 10px;
+   margin-top: 15px;
+   width: 380px;
 }
 .modal__window span{
    padding: 5px 15px;
    border-radius: 5px;
-   margin-bottom: 33px;
    border: solid 1px black;
    cursor: pointer;
+   box-shadow: 0 3px 5px black;
+   letter-spacing: .8px;
+}
+#easy{
+   background-color: chartreuse;
+}
+#normal{
+   background-color: rgb(255, 212, 128);
+}
+#hard{
+background-color: rgb(190, 77, 77);
 }
 .modal__window span:hover{
    background: radial-gradient(gold, rgb(255, 72, 0));
@@ -93,20 +112,89 @@ body{
    top: 2px;
    box-shadow: 0 1px 5px black;
 }
+h2 {
+   margin-top: 35px;
+   font-size: 24px;
+   font-style: bold;
+   text-align: center;
+}
 .game {
+   background: rgb(85, 171, 252);
+   display: flex;  
+   border: solid 1.5px black;
+   border-radius: 15px;
+   width: fit-content;
+   margin: 30px auto;
+   padding: 15px;
 }
 .game__board{
+   padding: 15px;
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: min-content;
+   margin: auto 0;
+   width: 375px;
 }
-.game__board__letter {
+.game__board__word{
+   box-shadow: 0 1px 5px black;
+   border-radius: 15px;
+   display: flex;
+   padding: 15px 15px;
+   justify-content: space-around;
+}
+.game__board__word__letter {
    width: 20px;
    height: 20px;
    font-size: 18px;
    border: solid 1px black;
    text-align: center;
 }
+form {
+   display: flex;
+   justify-content: space-between;
+   padding-top: 15px;
+   align-items: center;
+}
+.input-text{
+   font-size: 17px;
+   width: 30px;
+   height: 30px;
+   border: solid 1px black;
+   text-align: center;
+   margin: 0 15px;
+   text-transform: uppercase;
+}
+.input-text:focus{
+   box-shadow: 1px 1px 5px darkblue;
+}
+#button {
+   font-size: 18px;
+   background-color: rgb(16, 245, 92);
+   padding: 10px 15px;
+   border-radius: 3px;
+   box-shadow: 0 1px 5px #000;
+   cursor: pointer;
+}
+#button:active {
+   position: relative;
+   top: 2px;
+   box-shadow: 0 1px 2px #000;
+}
+.game__board__warning{
+   font-size: 16px;
+   font-style: italic;
+   color: red;
+   align-self: start;
+   font-weight: 600;
+   height: 1rem;
+   margin-top: 5px;
+   padding-left: 23px;
+}
 .game__lives {
+   display: inline-block;
+   margin: 15px;
 }
 .game__lives__item{
    width: 70px;
@@ -114,8 +202,34 @@ body{
    background-color: rgb(172, 58, 58);
    border-radius: 5px;
    box-shadow: 0 2px 5px #000;
-   margin: 5px 0;
+   margin: 5px auto;
+}
+.game__lives__item:first-child{
+margin-top: 15px;
+}
+.game__lives__item:last-child{
+   margin-bottom: 15px;
+   }
+
+@keyframes animation {
+   0% {background-color: rgb(172, 58, 58)}
+   50%{background-color:rgb(255, 187, 0)}
+   100% {background-color: rgb(172, 58, 58)}
+}
+
+.animation {
+   animation: animation infinite 1s linear;
+}
+
+.game__rules{
+   position: relative;
+   width: 500px;
+   margin: 0 auto;
 }
 .game__rules ol {
    padding-left: 30px;
+   margin-top: 15px;
+}
+.game__rules ol li {
+   margin-bottom: 5px;
 }
